@@ -12,7 +12,7 @@ import java.util.regex.*;
  * guide:
  * https://www.youtube.com/watch?v=NLAzwv4D5iI
  */
-public class ArraysLeftRotation {
+public class Arrays_LeftRotation {
 
   public static void main(String[] args) {
     Scanner in = new Scanner(System.in);
