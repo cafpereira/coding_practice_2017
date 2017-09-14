@@ -12,7 +12,7 @@ import java.util.regex.*;
  * guide:
  * https://www.youtube.com/watch?v=3MwRGPPB4tw
  */
-public class Strings_MakingAnagrams {
+class MakingAnagrams {
   public static int numberNeeded(String first, String second) {
     Map<Character, Integer> letters = new HashMap<>();
     for (char c : first.toCharArray()) {
