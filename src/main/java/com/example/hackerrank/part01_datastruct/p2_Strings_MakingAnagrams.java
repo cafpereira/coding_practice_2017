@@ -7,10 +7,8 @@ import java.math.*;
 import java.util.regex.*;
 
 /**
- * problem:
- * https://www.hackerrank.com/challenges/ctci-making-anagrams/problem
- * guide:
- * https://www.youtube.com/watch?v=3MwRGPPB4tw
+ * problem: https://www.hackerrank.com/challenges/ctci-making-anagrams
+ * guide: https://www.youtube.com/watch?v=3MwRGPPB4tw
  */
 class MakingAnagrams {
   public static int numberNeeded(String first, String second) {

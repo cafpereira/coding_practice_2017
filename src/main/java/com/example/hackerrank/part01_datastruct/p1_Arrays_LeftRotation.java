@@ -7,10 +7,8 @@ import java.math.*;
 import java.util.regex.*;
 
 /**
- * problem:
- * https://www.hackerrank.com/challenges/ctci-array-left-rotation/problem
- * guide:
- * https://www.youtube.com/watch?v=NLAzwv4D5iI
+ * problem: https://www.hackerrank.com/challenges/ctci-array-left-rotation
+ * guide:https://www.youtube.com/watch?v=NLAzwv4D5iI
  */
 class LeftRotation {
 

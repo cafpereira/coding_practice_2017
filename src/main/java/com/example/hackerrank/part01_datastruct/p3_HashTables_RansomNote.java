@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 /**
  * problem: https://www.hackerrank.com/challenges/ctci-ransom-note
- * guide: https://www.youtube.com/watch?v=shs0KM3wKv8
+ * guide: https://www.youtube.com/watch?v=1uIwiIjw1fw
  */
 class RansomNote {
   public static void main(String[] args) {
