@@ -11,8 +11,7 @@ public class Pg28_SquareSubMatrix_BottomUp {
   public int squareSubmatrix(boolean[][] arr) {
     int max = 0;
     // Initialize cache
-    int[][] cache =
-        new int[arr.length][arr[0].length];
+    int[][] cache = new int[arr.length][arr[0].length];
     // Iterate over matrix to compute each value
     for (int i = 0; i < cache.length; i++) {
       for (int j = 0; j < cache[0].length; j++) {
