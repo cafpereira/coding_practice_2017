@@ -5,7 +5,8 @@ import java.util.PriorityQueue;
 import java.util.Scanner;
 
 /**
- * problem: https://www.hackerrank.com/challenges/ctci-find-the-running-median guide: https://www.youtube.com/watch?v=VmogG01IjYc
+ * problem: https://www.hackerrank.com/challenges/ctci-find-the-running-median
+ * guide: https://www.youtube.com/watch?v=VmogG01IjYc
  */
 class RunningMedian {
 
