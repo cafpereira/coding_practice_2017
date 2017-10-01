@@ -23,8 +23,8 @@ public class Pg39_TargetSum_BottomUp {
         int[][] cache = new int[nums.length + 1][2 * sum + 1];
         if (sum == 0) return 0;
 
-        // Initialize i=0, T=0, remember that array is offset by sum
-        // cache[0][sum] is the starting (0,0) coordinate
+        // Initialize i=0, T=0, remember that array is offset by 'sum'
+        // Therefore, cache[0][sum] is actually the starting (0,0) coordinate
         cache[0][sum] = 1;
 
         // Iterate over previous row and update the current row
