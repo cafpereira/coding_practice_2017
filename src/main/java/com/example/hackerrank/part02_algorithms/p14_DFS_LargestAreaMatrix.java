@@ -1,7 +1,6 @@
 package com.example.hackerrank.part02_algorithms;
 
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * problem: https://www.hackerrank.com/challenges/ctci-connected-cell-in-a-grid
@@ -39,20 +38,14 @@ class RegionHelper {
       return totalArea;
     }
 
-    //                   right, down, left,  up
-    int[][] cartesian = {{0,1},{1,0},{0,-1},{-1,0}};
-
-    //                   up-right, down-right,  up-left, down-left
-    int[][] diagonals = {{-1,1},   {1,1},       {-1,-1}, {1,-1}};
-
-    // Combine all directions
-    int[][] directions = new int[cartesian.length + diagonals.length][2];
-    System.arraycopy(cartesian, 0, directions, 0, cartesian.length);
-    System.arraycopy(diagonals, 0, directions, cartesian.length, diagonals.length);
-
-    // Sum the total area on each direction
-    for (int[] d : directions) {
-      totalArea += searchArea(matrix, i + d[0], j + d[1], visited);
+    // Sum the total area on all directions
+    for (int row = i - 1; row <= i + 1; row++) {
+      for (int col = j - 1; col <= j + 1; col++) {
+        if (row == i && col == j) { // Dont search itself
+          continue;
+        }
+        totalArea += searchArea(matrix, row, col, visited);
+      }
     }
     return totalArea + 1;
   }
