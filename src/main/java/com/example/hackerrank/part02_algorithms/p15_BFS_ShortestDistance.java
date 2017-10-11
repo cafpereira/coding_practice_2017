@@ -10,7 +10,7 @@ import java.util.regex.*;
  * problem: https://www.hackerrank.com/challenges/ctci-bfs-shortest-reach
  * guide: https://www.youtube.com/watch?v=0XgVhsMOcQM
  */
-class Solution {
+class BFSDistance {
   public static class Graph {
 
     private static final Integer EDGE_LENGTH = 6;
