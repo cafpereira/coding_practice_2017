@@ -5,15 +5,13 @@ public class q3_MaxSumNonadjacent {
   public static int maxSumNonAdj (int[] array) {
     int inclusive = 0;
     int exclusive = 0;
-    int max = 0;
 
     for (int num : array) {
       int withoutNum = inclusive;
       inclusive = Math.max(inclusive, exclusive + num);
-      max = Math.max(max, Math.max(inclusive, exclusive));
       exclusive = withoutNum;
     }
-    return max;
+    return Math.max(inclusive, exclusive);
   }
 
   public static void main(String[] args) {
