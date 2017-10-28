@@ -28,11 +28,11 @@ public class q05_LevelOrderTraversal {
   public static void main(String[] args) {
     Node root = new TreeBuilder().root(100)
         .left(50)
-          .left(25).parent()
-          .right(75).parent()
+          .leftLeave(25)
+          .rightLeave(75)
         .parent()
         .right(200)
-          .right(350)
+          .rightLeave(350)
         .build();
     System.out.println("levelOrder(root):");
     levelOrder(root);

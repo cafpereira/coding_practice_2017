@@ -16,9 +16,19 @@ public class TreeBuilder {
     return this;
   }
 
+  public TreeBuilder leftLeave(Integer val) {
+    current.left = new Node(val, current);
+    return this;
+  }
+
   public TreeBuilder right(Integer val) {
     current.right = new Node(val, current);
     current = current.right;
+    return this;
+  }
+
+  public TreeBuilder rightLeave(Integer val) {
+    current.right = new Node(val, current);
     return this;
   }
 
