@@ -2,7 +2,7 @@ package com.example.coderust.part03_math;
 
 import java.util.*;
 
-public class q10_FindKthPermutation {
+public class q01_FindKthPermutation {
   public static List findKthPermutation (List elements, int k, List perm) {
     int n = elements.size();
     if (n == 1) {

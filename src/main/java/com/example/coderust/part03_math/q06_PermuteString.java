@@ -2,7 +2,7 @@ package com.example.coderust.part03_math;
 
 import java.util.*;
 
-public class q06_Permute_String {
+public class q06_PermuteString {
 
   public static List<String> permutations(String str) {
     List<String> res = new ArrayList<>();
