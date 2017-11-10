@@ -12,16 +12,25 @@ class SubsetSumDP {
     int n = numbers.size();
     boolean[][] table = new boolean[n][target + 1];
 
+    // Set TRUE on the two possible columns of the first number 'N1'
+    // [0][0] = you can always make zero by not selecting any number
+    // [0][N1] = only if N1 is less or equal target.
     table[0][0] = true;
     if (numbers.get(0) <= target) {
       table[0][numbers.get(0)] = true;
     }
 
+    // Now we iterate on the first row, but we look ahead the next
+    // number (e.g. N2). We need to stop iterating on the row before
+    // the last one, i.e, i == n - 2
     for (int i = 0; i < n - 1; i++) {
       int next = numbers.get(i + 1);
       for (int j = 0; j <= target; j++) {
         if (table[i][j]) {
+          // Set TRUE on the collum below
           table[i+1][j] = true;
+          // Also TRUE on the column [j + next],
+          // only if its within target range
           if ((j + next) <= target) {
             table[i+1][j + next] = true;
           }
