@@ -54,13 +54,13 @@ class AlienAlphabet {
   }
 
   public static void main(String[] args) {
-    expect("b, d, c, a", new String[]{"bcca", "babc", "dadc", "aad", "aac"});
-    expect("None", new String[]{"abc"});
-    expect("None", new String[]{"a", "ac", "aa", "b", "c"});
+    expect(new String[]{"bcca", "babc", "dadc", "aad", "aac"}, "b, d, c, a");
+    expect(new String[]{"abc"}, "None");
+    expect(new String[]{"a", "ac", "aa", "b", "c"}, "None");
   }
 
-  private static void expect(String expected, String[] words) {
-    System.out.println("getRelationships(words) = " + getAlphabetOrder(words) + " # Expected: "+ expected);
+  private static void expect(String[] words, String expected) {
+    System.out.println("getAlphabetOrder(words) = " + getAlphabetOrder(words) + " # Expected: "+ expected);
   }
 }
 
