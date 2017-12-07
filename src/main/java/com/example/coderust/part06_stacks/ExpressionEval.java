@@ -24,7 +24,7 @@ abstract class Operator implements Token {
   public static final Operator SUBTRACT = new Operator('-') {
     @Override
     public Double eval(Double op1, Double op2) {
-      return op2 - op1;
+      return op1 - op2;
     }
   };
   public static final Operator MULTIPLY = new Operator('*') {
@@ -36,7 +36,7 @@ abstract class Operator implements Token {
   public static final Operator DIVIDE = new Operator('/') {
     @Override
     public Double eval(Double op1, Double op2) {
-      return op2 / op1;
+      return op1 / op2;
     }
   };
   public static Map<Character, Operator> operators = new HashMap<Character, Operator>() {{
@@ -103,16 +103,20 @@ public class ExpressionEval {
 
   public static double evaluate(String expr) {
     List<Token> postfix = toPostfix(expr);
-    Stack<Double> ops = new Stack<>();
+    Stack<Double> operands = new Stack<>();
 
     for (Token token : postfix) {
       if (token.isOperator()) {
-        ops.push(token.eval(ops.pop(), ops.pop()));
+        // Operands are popped in reverse order
+        // from the stack
+        Double op2 = operands.pop();
+        Double op1 = operands.pop();
+        operands.push(token.eval(op1, op2));
       } else {
-        ops.push(token.value());
+        operands.push(token.value());
       }
     }
-    return ops.pop();
+    return operands.pop();
   }
 
   public static List<Token> toPostfix(String expr) {
