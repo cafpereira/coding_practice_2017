@@ -8,7 +8,7 @@ import java.util.*;
  * number that is common in all three arrays.
  */
 
-public class q03_SmallestCommomNumber {
+public class q03_SearchRotatedArray {
 
   static int find_least_common_number(int[] arr1,
                                       int[] arr2,
