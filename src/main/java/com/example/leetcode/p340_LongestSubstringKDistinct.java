@@ -4,35 +4,28 @@ public class p340_LongestSubstringKDistinct {
   public static String longestDistinctSubstring(String str, int k) {
     int start = 0;
     int distinct = 0;
-    String res = null;
+    String maxStr = null;
     int[] count = new int[256];
-
     for (int end = 0; end < str.length(); end++) {
-      char c = str.charAt(end);
-      if (count[c] == 0) {
+      if (count[str.charAt(end)]++ == 0) {
         distinct++;
-      }
-      count[c]++;
-      if (distinct == k) {
-        int len = end - start + 1;
-        if (res == null || len > res.length()) {
-          res = str.substring(start, end + 1);
-        }
       }
       // Move start to the right and keep removing chars from
       // the current window until distinct count is back to K.
-      while (distinct > k) {
-        // No need to check with start goes out-of-boundary, because distinct counter
-        // MUST reach zero before that happens.
-        char s = str.charAt(start++);
-        count[s]--;
-        if (count[s] == 0) {
-          distinct--;
-        }
+      if (distinct > k) {
+        while (--count[str.charAt(start++)] > 0); // No need to test if 'start' is out of limit
+        // because it will eventually meet 'end' and
+        // distinct counter will converge to K
+        distinct--;
+      }
+      int len = end - start + 1;
+      if (maxStr == null || len > maxStr.length()) {
+        maxStr = str.substring(start, end + 1);
       }
     }
-    return res;
+    return maxStr;
   }
+
 
   public static void main(String[] args) {
     System.out.println("longestDistinctSubstring('karappa',1) = " + longestDistinctSubstring("karappa", 1));
