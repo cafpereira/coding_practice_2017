@@ -6,7 +6,7 @@ import java.util.*;
 /**
  * https://leetcode.com/problems/k-diff-pairs-in-an-array/
  */
-public class p532a_findKDiffPairs_V1 {
+public class p532_findKDiffPairs_V2 {
   public int findPairs(int[] nums, int k) {
     // Corner cases
     if (nums == null || nums.length == 0) {

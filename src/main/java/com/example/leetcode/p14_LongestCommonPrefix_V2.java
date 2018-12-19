@@ -1,6 +1,6 @@
 package com.example.leetcode;
 
-public class p14a_LongestCommonPrefix_V1 {
+public class p14_LongestCommonPrefix_V2 {
   public String longestCommonPrefix(String[] strs) {
     if (strs.length < 1) {
       return "";

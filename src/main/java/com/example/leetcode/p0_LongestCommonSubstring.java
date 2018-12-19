@@ -2,7 +2,7 @@ package com.example.leetcode;
 
 import java.util.*;
 
-public class p5a_LongestCommonSubstring_V1 {
+public class p0_LongestCommonSubstring {
   public static String LCS(String A, String B) {
     int n = A.length();
     int m = B.length();
