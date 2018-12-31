@@ -5,32 +5,37 @@ import java.util.*;
 class Mastermind {
 
   public static int[] checkGuess(String a, String g) {
-    char[] answer = a.toCharArray();
+    char[] secret = a.toCharArray();
     char[] guess = g.toCharArray();
     int hits = 0;
     int near = 0;
 
-    Map<Character, Integer> ansCount = new HashMap<>();
-    Map<Character, Integer> gssCount = new HashMap<>();
+    Map<Character, Integer> secretCount = new HashMap<>();
+    Map<Character, Integer> guessCount = new HashMap<>();
 
     for (int i = 0; i < guess.length; i++) {
-      if (answer[i] == guess[i]){
+      if (secret[i] == guess[i]){
+        // Count hits
         hits++;
       }
       else {
-        ansCount.put(answer[i], ansCount.containsKey(answer[i]) ? ansCount.get(answer[i]) + 1 : 1);
-        gssCount.put(guess[i], gssCount.containsKey(guess[i]) ? gssCount.get(guess[i]) + 1 : 1);
+        // Keep frequency map of non-hit colors for guess and secret words
+        secretCount.put(secret[i], secretCount.getOrDefault(secret[i], 0) + 1);
+        guessCount.put(guess[i], guessCount.getOrDefault(guess[i], 0) + 1);
       }
     }
 
-    // Only iterate over guess colors since there is no need
-    // to count near misses for colors that were not used in
-    // the player's guess
-    for (Character color : gssCount.keySet()) {
-      if (ansCount.containsKey(color)) {
-        // Near miss count is equal the lesser between guess
-        // count and solution count (not including hits).
-        near += Math.min(ansCount.get(color), gssCount.get(color));
+    // Lets use the freq maps to calculate the near miss count.
+
+    // Only iterate over guess colors since there are no near misses for colors
+    // that were not used in the player's guess
+    for (Character color : guessCount.keySet()) {
+      if (secretCount.containsKey(color)) {
+        // To find near misses we take the less between guess count and secret count.
+        // This works because:
+        // A) guessCount > secretCount: extra guesses are not counted as near hits.
+        // B) secretCount > guessCount: missing guesses are not counted as near hits.
+        near += Math.min(secretCount.get(color), guessCount.get(color));
       }
     }
     return new int[]{hits, near};
