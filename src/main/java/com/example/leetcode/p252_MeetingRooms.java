@@ -1,6 +1,6 @@
 package com.example.leetcode;
 
-import com.example.leetcode.utils.Interval;
+import com.example.leetcode.utils.*;
 import java.util.*;
 
 /**
