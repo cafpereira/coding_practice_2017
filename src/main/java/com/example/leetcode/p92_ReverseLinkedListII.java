@@ -1,5 +1,7 @@
 package com.example.leetcode;
 
+import com.example.leetcode.utils.ListNode;
+
 public class p92_ReverseLinkedListII {
   public ListNode reverseBetween(ListNode head, int m, int n) {
     // corner cases
