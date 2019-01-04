@@ -1,10 +1,6 @@
-package com.example.hackerrank.part02_algorithms;
+package com.example.hackerrank.ctci.part02_algorithms;
 
-import java.io.*;
 import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
 
 /**
  * problem: https://www.hackerrank.com/challenges/ctci-ice-cream-parlor

@@ -1,8 +1,5 @@
-package com.example.hackerrank.part02_algorithms;
+package com.example.hackerrank.ctci.part02_algorithms;
 
-import java.io.FileInputStream;
-import java.util.Arrays;
-import java.util.Comparator;
 import java.util.Scanner;
 
 /**

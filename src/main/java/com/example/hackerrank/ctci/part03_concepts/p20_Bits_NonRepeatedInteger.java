@@ -1,4 +1,4 @@
-package com.example.hackerrank.part03_concepts;
+package com.example.hackerrank.ctci.part03_concepts;
 
 import java.util.*;
 

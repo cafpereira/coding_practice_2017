@@ -1,7 +1,4 @@
-package com.example.hackerrank.part01_datastruct;
-
-import java.util.*;
-import java.io.*;
+package com.example.hackerrank.ctci.part01_datastruct;
 
 /**
  * problem: https://www.hackerrank.com/challenges/ctci-linked-list-cycle

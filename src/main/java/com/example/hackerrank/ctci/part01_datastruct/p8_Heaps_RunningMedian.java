@@ -1,4 +1,4 @@
-package com.example.hackerrank.part01_datastruct;
+package com.example.hackerrank.ctci.part01_datastruct;
 
 import java.util.Collections;
 import java.util.PriorityQueue;
