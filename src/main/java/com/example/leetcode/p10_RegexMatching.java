@@ -2,13 +2,14 @@ package com.example.leetcode;
 
 public class p10_RegexMatching {
   public boolean isMatch(String s, String p) {
-    if (s.equals("") && p.equals("")) {
+    if (s.isEmpty() && p.isEmpty()) {
       // Entire expression matched with success
       return true;
-    } else if (p.equals("")) {
+    } else if (p.isEmpty()) {
       // Found partial match, return false
       return false;
     }
+
     if (p.length() > 1 && p.charAt(1) == '*') {
       // Pattern is STAR
       // Try to match 1 to N occurrences of pattern char 'c' (or any char if its dot)
@@ -24,18 +25,10 @@ public class p10_RegexMatching {
       return isMatch(s, p.substring(2));
     } else if (p.charAt(0) == '.') {
       // Pattern is DOT (without star)
-      if (s.length() > 0) {
-        return isMatch(s.substring(1), p.substring(1));
-      } else {
-        return false;
-      }
+      return !s.isEmpty() && isMatch(s.substring(1), p.substring(1));
     } else {
       // Pattern is [a-z]
-      if (s.length() > 0 && s.charAt(0) == p.charAt(0)) {
-        return isMatch(s.substring(1), p.substring(1));
-      } else {
-        return false;
-      }
+      return !s.isEmpty() && s.charAt(0) == p.charAt(0) && isMatch(s.substring(1), p.substring(1));
     }
   }
 
