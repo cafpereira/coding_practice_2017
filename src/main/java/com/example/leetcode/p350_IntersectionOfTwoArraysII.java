@@ -48,5 +48,9 @@ class p350_IntersectionOfTwoArraysII {
     int[] arr = new int[intersec.size()];
     for (int k= 0; k < intersec.size(); k++) arr[k] = intersec.get(k);
     return arr;
+
+    // Another option is to use Java 8 streams API, but its much slower
+    // than creating the array manually (40ms vs 5ms)
+    // return intersec.stream().mapToInt(i -> i).toArray();
   }
 }
