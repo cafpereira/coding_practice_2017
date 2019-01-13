@@ -2,20 +2,19 @@ package com.example.leetcode;
 
 public class p10_RegexMatching {
   public boolean isMatch(String s, String p) {
-    if (s.isEmpty() && p.isEmpty()) {
+    if (s.equals("") && p.equals("")) {
       // Entire expression matched with success
       return true;
-    } else if (p.isEmpty()) {
+    } else if (p.equals("")) {
       // Found partial match, return false
       return false;
     }
-
     if (p.length() > 1 && p.charAt(1) == '*') {
       // Pattern is STAR
-      // Try to match 1 to N occurrences of pattern char 'c' (or any char if its dot)
       int i = 0;
       char c = p.charAt(0);
-      while (i < s.length() && (c == '.' || s.charAt(i) == c)) {
+      // Try to match 1 to N occurrences of star character
+      while (i < s.length() && (s.charAt(i) == c || c == '.')) {
         if (isMatch(s.substring(i + 1), p.substring(2))) {
           return true;
         }
@@ -23,12 +22,12 @@ public class p10_RegexMatching {
       }
       // Match zero occurrences
       return isMatch(s, p.substring(2));
-    } else if (p.charAt(0) == '.') {
-      // Pattern is DOT (without star)
-      return !s.isEmpty() && isMatch(s.substring(1), p.substring(1));
+    } else if (s.length() > 0 && (s.charAt(0) == p.charAt(0) || p.charAt(0) == '.')) {
+      // Pattern is [a-z] or DOT (without star)
+      return isMatch(s.substring(1), p.substring(1));
     } else {
-      // Pattern is [a-z]
-      return !s.isEmpty() && s.charAt(0) == p.charAt(0) && isMatch(s.substring(1), p.substring(1));
+      // Match not found
+      return false;
     }
   }
 
