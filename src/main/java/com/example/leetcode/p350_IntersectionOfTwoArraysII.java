@@ -1,10 +1,6 @@
 package com.example.leetcode;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Normal solution uses a frequency map to count occurrences of values in nums1.
