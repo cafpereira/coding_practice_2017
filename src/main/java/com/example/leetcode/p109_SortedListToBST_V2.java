@@ -1,7 +1,6 @@
 package com.example.leetcode;
 
-import com.example.leetcode.utils.ListNode;
-import com.example.leetcode.utils.TreeNode;
+import com.example.leetcode.utils.*;
 import java.util.*;
 
 /**
