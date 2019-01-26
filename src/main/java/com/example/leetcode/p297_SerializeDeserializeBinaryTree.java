@@ -3,7 +3,6 @@ package com.example.leetcode;
 import java.util.*;
 import com.example.leetcode.utils.*;
 
-
 /**
  * Serialize the tree using BST traversal. This will match
  * binary tree encoding used by leetcode OJ

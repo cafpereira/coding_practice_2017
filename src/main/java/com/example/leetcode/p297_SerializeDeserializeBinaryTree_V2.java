@@ -6,7 +6,7 @@ import java.util.*;
 /**
  * Serialize using DFS traversal, not so readable as
  * BFS option but uses less memory and implementation
- * is simple.
+ * code is easier.
  */
 public class p297_SerializeDeserializeBinaryTree_V2 {
   static final String NULL = "null";
